@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Upload Recipie</title>
+
+    <style>
+        body {background-color: #eed6d3;}
+        h5   {color: #67595e;}
+        p    {color: #a49393;}
+        .navbar  {background-color: #e8b4b8}
+        </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid" style="background-color: #e8b4b8; margin: 0;">
+          <a class="navbar-brand" href="#">AllRecipies</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/upload">Upload Recipie</a>
+              </li>
+            
+            </ul>
+          </div>
+        </div>
+      </nav>
+ 
+    <div style="margin: 150px;">
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="recipie_name">Recipie Name</label>
+              <input type="name" class="form-control" name="recipie_name" id="recipie_name" aria-describedby="emailHelp" placeholder="Enter Recipie Name">
+            
+            </div> <br>
+
+            <div class="form-group">
+              <label for="recipie_description">Recipie Description</label>
+              <input type="text" name="recipie_description" class="form-control" id="recipie_description" placeholder="Recipie description ?">
+            </div> <br>
+
+            <div class="form-group">
+                <label for="recipie_duration">Recipie Duration</label>
+                <input type="number" name="recipie_duration" class="form-control" id="recipie_duration" placeholder="Duration?">
+              </div> <br>
+
+              <div class="form-group">
+                <label for="recipie_ingredients">Recipie Ingredients</label>
+                <input type="text" name="recipie_ingredients" class="form-control" id="recipie_ingredients" placeholder="Ingredients?">
+              </div> <br>
+
+              <div class="form-group">
+                <label for="recipie_steps">Recipie Steps</label>
+                <input type="text" name="recipie_steps" class="form-control" id="recipie_steps" placeholder="Steps?">
+              </div> <br>
+
+              <div class="form-group">
+                <label for="car_photo">Recipie Photo: </label>
+                <input type="file" class="form-control-file" id="recipie_photo" name="recipie_photo">
+              </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>  
+
+    </div>
+
+
+
+
+    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+</body>
+</html>
